@@ -4,7 +4,7 @@ const navbar = document.getElementById("nav");
 const homeHeight = home.getBoundingClientRect().height;
 
 document.addEventListener("scroll", () => {
-  if (window.scrollY > navbarHeight - 70) {
+  if (window.scrollY > homeHeight - 70) {
     navbar.classList.add("navbar--dark");
   } else {
     navbar.classList.remove("navbar--dark");
