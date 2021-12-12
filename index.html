@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coronavirus++</title>
+    <!-- google font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;600;700&family=Merriweather:wght@400;700&family=Montserrat:wght@400;600;700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/36c5a1c12f.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+  </head>
+
+  <body>
+    <!-- navbar -->
+    <nav id="nav">
+      <div class="nav__logo">
+        <a href="#" class="logo__icon"
+          ><i class="fas fa-syringe"></i>
+          <p class="logo__desc">COVID - 19</p>
+        </a>
+      </div>
+      <ul class="nav__list">
+        <li class="nav__home" data-link="#home">home</li>
+        <li class="nav__inform" data-link="#inform">inform</li>
+        <li class="nav__variation" data-link="#variation">variation</li>
+        <li class="nav__vaccine" data-link="#vaccine">vaccine</li>
+        <li class="nav__contact" data-link="#contact">contact</li>
+        <!-- <li class="nav__call" data-link="#">call</li> -->
+      </ul>
+    </nav>
+
+    <!-- main -->
+    <!-- home -->
+    <section id="home" class="section section__container">
+      <div class="home__content">
+        <h3>
+          New
+          <span>Normal</span>
+        </h3>
+        <h1>COVID<span>-19</span></h1>
+      </div>
+      <img
+        class="home__img"
+        src="./imgs/coronavirus-ge450a182a_1920.jpg"
+        alt=""
+      />
+    </section>
+
+    <!-- inform -->
+    <!-- 미완성 -->
+    <section id="inform" class="section section__container">
+      <div class="inform__content">
+        <img src="imgs/child-g6fce944be_1920.jpg" alt="" class="inform__img" />
+        <div class="inform__desc">
+          <h3 class="main-font" style="font-weight: bold">
+            “Can you hear me?”
+          </h3>
+          <p>
+            코로나로 인한 언택트 회의가 잦아지면서 자주 사용되는 말<br /><br />
+            현재 우리는 <span>코로나 바이러스(SARS-Cov-2)</span>로 인한 국제적
+            공중보건 비상사태 속에 살고 있다.<br />
+            이는 <span>코로나바이러스감염증-19(COVID-19)</span>를 유발하여 전
+            세계를 공포에 빠뜨렸다.<br />
+            대한민국 역시 코로나의 위험에서 벗어나지 못했고, 매일 수많은
+            감염자가 나와 우리를 불안하게 하고 있다.
+          </p>
+          <br />
+          <p class="button_text">일일 확진자 수 확인하러 가기</p>
+
+          <button class="inform__btn" onclick="btnClick()">GO !</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- variation -->
+    <section id="variation" class="section section__container">
+      <h2 class="variation__title">코로나 변이 바이러스</h2>
+
+      <div class="card-wrapper">
+        <ul class="card-wrapper__list">
+          <!-- card1 -->
+        </ul>
+      </div>
+      <p class="now" onmouseover="changeToHour()" onmouseout="changeToNow()">
+        NOW
+      </p>
+    </section>
+
+    <!-- vaccine -->
+    <section id="vaccine" class="section section__container">
+      <div class="vaccine_desc">
+        <h2>국내 접종 가능 백신</h2>
+      </div>
+      <ul>
+        <li class="vaccine_list vaccine_pf">
+          <img class="vc_img odd" src="imgs/pfizer.png" alt="" />
+          <div class="pf__title">
+            <h3 class='pf__title--h3'>Pfizer</h3>
+            <i
+              class="fas fa-info-circle vaccine__question vaccine__question__pf"
+            ></i>
+            <div class="vaccine__content vaccine__content--pf">
+              <div class="pf__content">
+                <p>주기 : 2회, 21일 간격</p>
+                <p>종류 : mRNA</p>
+                <p>주의사항 :</p>
+                <p>알레르기 반응을 보인다면<br />2차 접종 금지</p>
+              </div>
+            </div>
+          </div>
+          <!-- <p>핵산 백신</p> -->
+        </li>
+        <li class="vaccine_list vaccine_mdn">
+          <img class="vc_img even" src="imgs/moderna.png" alt="" />
+          <div class="mdn__title">
+            <h3 class='mdn__title--h3'>Moderna</h3>
+            <i
+              class="
+                fas
+                fa-info-circle
+                vaccine__question vaccine__question__mdn
+              "
+            ></i>
+            <div class="vaccine__content vaccine__content--mdn">
+              <div class="mdn__content">
+                <p>주기 : 2회, 28일 간격</p>
+                <p>종류 : mRNA</p>
+                <p>주의사항 :</p>
+                <p>알레르기 반응을 보인다면<br />2차 접종 금지</p>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="vaccine_list vaccine_az">
+          <img class="vc_img odd" src="imgs/astrazeneca.png" alt="" />
+          <div class="az__title">
+            <h3 class='az__title--h3'>Astrazeneca</h3>
+            <i
+              class="fas fa-info-circle vaccine__question vaccine__question__az"
+            ></i>
+            <div class="vaccine__content vaccine__content--az">
+              <div class="az__content">
+                <p>주기 : 2회, 4-12주</p>
+                <p>종류 : 바이러스벡터 백신</p>
+                <p>주의사항 :</p>
+                <p>
+                  아주 드물게 혈소판 감소를<br />
+                  동반하는 혈전증 발생<br />                  
+              </div>
+              </p>
+            </div>
+          </div>
+          <!-- <p>전달체 백신</p> -->
+        </li>
+        <li class="vaccine_list vaccine_js">
+          <img class="vc_img even" src="imgs/janssen.png" alt="" />
+          <div class="js__title">
+            <h3 class='js__title--h3'>Janssen</h3>
+            <i
+              class="fas fa-info-circle vaccine__question vaccine__question__js"
+            ></i>
+            <div class="vaccine__content vaccine__content--js">
+              <div class="js__content">
+                <p>주기 : 1회 접종</p>
+                <p>종류 : 바이러스벡터 백신</p>
+                <p>주의사항 :</p>
+                <p>
+                  아스트라제네카와 마찬가지로 드물게<br />
+                  혈소판 감소 동반 혈전증 발생<br />
+                </p>  
+              </div>
+            </div>
+          </div>
+          <!-- <p>전달체 백신</p> -->
+        </li>
+      </ul>
+    </section>
+
+    <!-- footer -->
+    <footer>
+      <section id="contact" class="section">
+        <h2 class="contact__title">Let's talk</h2>
+        <h3 class="contact__email">berry9901@gmail.com</h3>
+        <div class="contact__links">
+          <a href="https://github.com/sxxngminii" target="blank">
+            <i class="far fa-envelope"></i>
+          </a>
+          <a
+            href="www.instagram.com/sxxngmini"
+            target="blank"
+            class="instagram"
+          >
+            <i class="fas fa-mobile-alt"></i>
+          </a>
+        </div>
+        <p class="contact__rights">HANKUK UNIVERSITY OF FOREIGN STUDIES</p>
+      </section>
+    </footer>
+  </body>
+</html>
