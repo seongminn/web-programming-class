@@ -1,6 +1,6 @@
 "use strict";
 // 스크롤 시 navbar 색상 변경
-const navbar = document.querySelector("#nav");
+const navbar = document.getElementById("nav");
 const navbarHeight = home.getBoundingClientRect().height;
 
 document.addEventListener("scroll", () => {
@@ -216,13 +216,13 @@ const contentPf = document.getElementsByClassName("vaccine__content--pf");
 const titlePf = document.getElementsByClassName("pf__title--h3");
 
 vaccinePf[0].addEventListener("mouseover", () => {
-  contentPf[0].classList.add("open");
-  titlePf[0].classList.add("focus");
+  contentPf[0].style.display = "block";
+  titlePf[0].style.borderBottom = "3px solid #ff7657";
 });
 
 vaccinePf[0].addEventListener("mouseout", () => {
-  contentPf[0].classList.remove("open");
-  titlePf[0].classList.remove("focus");
+  contentPf[0].style.display = "none";
+  titlePf[0].style.borderBottom = "none";
 });
 
 // 모더나
@@ -231,13 +231,13 @@ const contentMdn = document.getElementsByClassName("vaccine__content--mdn");
 const titleMdn = document.getElementsByClassName("mdn__title--h3");
 
 vaccineMdn[0].addEventListener("mouseover", () => {
-  contentMdn[0].classList.add("open");
-  titleMdn[0].classList.add("focus");
+  contentMdn[0].style.display = "block";
+  titleMdn[0].style.borderBottom = "3px solid #ff7657";
 });
 
 vaccineMdn[0].addEventListener("mouseout", () => {
-  contentMdn[0].classList.remove("open");
-  titleMdn[0].classList.remove("focus");
+  contentMdn[0].style.display = "none";
+  titleMdn[0].style.borderBottom = "none";
 });
 
 // 아스트라제네카
@@ -246,13 +246,13 @@ const contentAz = document.getElementsByClassName("vaccine__content--az");
 const titleAz = document.getElementsByClassName("az__title--h3");
 
 vaccineAz[0].addEventListener("mouseover", () => {
-  contentAz[0].classList.add("open");
-  titleAz[0].classList.add("focus");
+  contentAz[0].style.display = "block";
+  titleAz[0].style.borderBottom = "3px solid #ff7657";
 });
 
 vaccineAz[0].addEventListener("mouseout", () => {
-  contentAz[0].classList.remove("open");
-  titleAz[0].classList.remove("focus");
+  contentAz[0].style.display = "none";
+  titleAz[0].style.borderBottom = "none";
 });
 
 // 얀센
@@ -261,11 +261,11 @@ const contentJs = document.getElementsByClassName("vaccine__content--js");
 const titleJs = document.getElementsByClassName("js__title--h3");
 
 vaccineJs[0].addEventListener("mouseover", () => {
-  contentJs[0].classList.add("open");
-  titleJs[0].classList.add("focus");
+  contentJs[0].style.display = "block";
+  titleJs[0].style.borderBottom = "3px solid #ff7657";
 });
 
 vaccineJs[0].addEventListener("mouseout", () => {
-  contentJs[0].classList.remove("open");
-  titleJs[0].classList.remove("focus");
+  contentJs[0].style.display = "none";
+  titleJs[0].style.borderBottom = "none";
 });
