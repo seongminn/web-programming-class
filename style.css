@@ -22,8 +22,7 @@
 }
 
 body {
-  font-family: "Catamaran", sans-serif, "Montserrat", sans-serif, "Roboto",
-    sans-serif;
+  font-family: "Catamaran", sans-serif;
   display: block;
   margin: 0;
   background-color: #fcf9ed;
@@ -532,6 +531,7 @@ p {
 .vaccine__content.open {
   display: block;
 }
+
 /* contact */
 #contact {
   background-color: #e6decc;

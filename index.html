@@ -33,11 +33,11 @@
         <li class="nav__variation" data-link="#variation">variation</li>
         <li class="nav__vaccine" data-link="#vaccine">vaccine</li>
         <li class="nav__contact" data-link="#contact">contact</li>
-        <!-- <li class="nav__call" data-link="#">call</li> -->
+
       </ul>
     </nav>
 
-    <!-- main -->
+    <!-- Main page-->
     <!-- home -->
     <section id="home" class="section section__container">
       <div class="home__content">
@@ -55,7 +55,6 @@
     </section>
 
     <!-- inform -->
-    <!-- 미완성 -->
     <section id="inform" class="section section__container">
       <div class="inform__content">
         <img src="imgs/child-g6fce944be_1920.jpg" alt="" class="inform__img" />
@@ -75,6 +74,7 @@
           <br />
           <p class="button_text">일일 확진자 수 확인하러 가기</p>
 
+          <!-- button 태그 클릭 시 btnClick 함수 실행 main.js:94-->
           <button class="inform__btn" onclick="btnClick()">GO !</button>
         </div>
       </div>
@@ -83,12 +83,17 @@
     <!-- variation -->
     <section id="variation" class="section section__container">
       <h2 class="variation__title">코로나 변이 바이러스</h2>
-
+      
+      <!-- 내용은 main.js:110 ~ 174를 통해 추가 -->
       <div class="card-wrapper">
         <ul class="card-wrapper__list">
-          <!-- card1 -->
+
         </ul>
       </div>
+      <!-- 
+      p 태그에 마우스를 올리면 changeToHour 함수를 실행하고, (main.js:181)
+      p 태그에서 마우스를 빼면 changeToNor 함수 실행 (main.js:187)
+      -->
       <p class="now" onmouseover="changeToHour()" onmouseout="changeToNow()">
         NOW
       </p>
@@ -108,6 +113,8 @@
               class="far fa-question-circle vaccine__question vaccine__question__pf"
             ></i>
             <div class="vaccine__content vaccine__content--pf">
+
+              <!-- pfizer question mark 마우스 호버 시 나타나는 내용 main.js:194-->
               <div class="pf__content">
                 <p>주기 : 2회, 21일 간격</p>
                 <p>종류 : mRNA</p>
@@ -116,7 +123,7 @@
               </div>
             </div>
           </div>
-          <!-- <p>핵산 백신</p> -->
+
         </li>
         <li class="vaccine_list vaccine_mdn">
           <img class="vc_img even" src="imgs/moderna.png" alt="" />
@@ -129,6 +136,8 @@
               "
             ></i>
             <div class="vaccine__content vaccine__content--mdn">
+
+              <!-- moderna question mark 마우스 호버 시 나타나는 내용 main.js:209-->
               <div class="mdn__content">
                 <p>주기 : 2회, 28일 간격</p>
                 <p>종류 : mRNA</p>
@@ -146,6 +155,8 @@
               class="far fa-question-circle vaccine__question vaccine__question__az"
             ></i>
             <div class="vaccine__content vaccine__content--az">
+
+              <!-- astrazeneca question mark 마우스 호버 시 나타나는 내용 main.js: 224-->
               <div class="az__content">
                 <p>주기 : 2회, 4-12주</p>
                 <p>종류 : 바이러스벡터 백신</p>
@@ -157,7 +168,6 @@
               </p>
             </div>
           </div>
-          <!-- <p>전달체 백신</p> -->
         </li>
         <li class="vaccine_list vaccine_js">
           <img class="vc_img even" src="imgs/janssen.png" alt="" />
@@ -167,6 +177,7 @@
               class="far fa-question-circle vaccine__question vaccine__question__js"
             ></i>
             <div class="vaccine__content vaccine__content--js">
+              <!-- janssen question mark 마우스 호버 시 나타나는 내용 main.js:239-->
               <div class="js__content">
                 <p>주기 : 1회 접종</p>
                 <p>종류 : 바이러스벡터 백신</p>
@@ -178,7 +189,6 @@
               </div>
             </div>
           </div>
-          <!-- <p>전달체 백신</p> -->
         </li>
       </ul>
     </section>
