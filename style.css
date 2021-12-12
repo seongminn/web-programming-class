@@ -506,6 +506,7 @@ p {
 
 .vaccine_list .vaccine__question {
   position: absolute;
+  color: #082e54;
   transform: translate(8px);
   font-size: 12px;
   cursor: pointer;
