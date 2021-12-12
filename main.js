@@ -1,7 +1,7 @@
 "use strict";
 // 스크롤 시 navbar 색상 변경
 const navbar = document.getElementById("nav");
-const navbarHeight = home.getBoundingClientRect().height;
+const homeHeight = home.getBoundingClientRect().height;
 
 document.addEventListener("scroll", () => {
   if (window.scrollY > navbarHeight - 70) {
