@@ -26,59 +26,79 @@ navbarMenu.addEventListener("click", event => {
 });
 
 // scrollIntoView 함수
-const sectionIds = ["#home", "#inform", "#variation", "#vaccine", "#contact"];
-const sections = sectionIds.map(id => document.querySelector(id));
-const navItems = sectionIds.map(id =>
-  document.querySelector(`[data-link="${id}"]`)
-);
-
-let selectedNavIndex = 0;
-let selectedNavItem = navItems[0];
-function selectNavItem(selected) {
-  selectedNavItem.classList.remove("active");
-  selectedNavItem = selected;
-  selectedNavItem.classList.add("active");
-}
-
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({ behavior: "smooth" });
   selectNavItem(navItems[sectionIds.indexOf(selector)]);
 }
 
+// 스크롤 했을 때 네비게이션 list의 색 변경
+
+const sectionIds = ["#home", "#inform", "#variation", "#vaccine", "#contact"];
+// sectionIds 배열의 각 항목에 해당하는 섹션을 배열로 받아온다
+const sections = sectionIds.map(id => document.querySelector(id));
+// 속성이 data-link인 항목(nav list)을 배열로 받아온다.
+const navItems = sectionIds.map(id =>
+  document.querySelector(`[data-link="${id}"]`)
+);
+
+// 현재 선택된 nav index
+let selectedNavIndex = 0;
+// 현재 선택된 nav 요소
+let selectedNavItem = navItems[0];
+function selectNavItem(selected) {
+  // 기존에 선택되어 있던 요소의 active 클래스 제거
+  selectedNavItem.classList.remove("active");
+  selectedNavItem = selected;
+  // 새롭게 선택된 요소에 active 클래스 추가
+  selectedNavItem.classList.add("active");
+}
+
 // 스크롤 했을 때, section 클래스의 높이값을 받아오고, 이에 따른 네비게이션 리스트 색상 변경
 const observerOptions = {
-  root: null,
-  rootMargin: "0px",
-  threshold: 0.3,
+  root: null, // 기본적으로 viewport 사용
+  rootMargin: "0px", // viewport의 마진은 0
+  threshold: 0.3, // 0.3의 비율이 viewport에 보여진다면 함수를 실행한다.
 };
 
+//
 const observerCallback = (entries, observer) => {
   entries.forEach(entry => {
+    // 요소가 화면 밖으로 나가는 경우 && 요소가 화면 안에 보이는 경우에만 실행
     if (!entry.isIntersecting && entry.intersectionRatio > 0) {
+      // 현재 화면에 보이는 요소의 index
       const index = sectionIds.indexOf(`#${entry.target.id}`);
-      // 스크롤링이 아래로 되어서 페이지가 올라옴
+      // 스크롤링이 아래로 되어서 페이지가 올라오는 경우
       if (entry.boundingClientRect.y < 0) {
-        selectedNavIndex = index + 1;
+        selectedNavIndex = index + 1; // index 바로 다음의 섹션 선택
       } else {
-        selectedNavIndex = index - 1;
+        //페이지가 내려가는 경우
+        selectedNavIndex = index - 1; // index 이전의 섹션 선택
       }
     }
   });
 };
 
+// observer 객체 생성
 const observer = new IntersectionObserver(observerCallback, observerOptions);
+// sections의 각 항목에 대해 observe 메소드 실행
 sections.forEach(section => observer.observe(section));
 
+// window에 wheel 이벤트가 발생할 경우
 window.addEventListener("wheel", () => {
+  // scroll이 가장 위로 되어 있을 때
   if (window.scrollY === 0) {
+    // selectedNavIndex를 0으로 지정하여 home에 active 추가
     selectedNavIndex = 0;
   } else if (
+    // scroll이 가장 밑에 도달 했을 경우
     Math.round(window.scrollY + window.innerHeight) >=
     document.body.clientHeight
   ) {
+    // selectedNavIndex가 navItems의 마지막 항목을 가리키도록 지정
     selectedNavIndex = navItems.length - 1;
   }
+  // navItems 배열의 선택된 index에 클래스 삭제 및 추가
   selectNavItem(navItems[selectedNavIndex]);
 });
 
